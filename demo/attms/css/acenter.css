@@ -1,0 +1,259 @@
+@charset "UTF-8";
+body{
+  font-family: "微软雅黑"!important;
+}
+html{
+  overflow: scroll;
+}
+.user_content>div{
+  float:left;
+}
+.user_content>div>h1{
+  text-align: center;
+  background-color: #e03e3f;
+  height:52px;
+  line-height: 52px;
+  color: #fff;
+  width:212px;
+  font-size: 20px;
+}
+.user_content>div>.left{
+  width:210px;
+  border: 1px solid #ccc;
+}
+.user_content>div>.left>ul{
+  padding: 25px 0;
+}
+.user_content>div>.left>ul>li{
+  line-height:46px;
+  margin-bottom: 5px;
+}
+.user_content>div>.left>ul>li.active{
+}
+.user_content>div>.left>ul>li>a{
+  font-size: 16px;
+  color: #333333;
+  display: inline-block;
+  margin-left: 45px;
+  width: 161px;
+}
+.user_content>div>.left>ul>li>dl{
+  display: none;
+}
+.user_content>div>.left>ul>li>dl>dt{
+  font-size: 14px;
+  color: #666666;
+  cursor: pointer;
+  padding-left: 95px;
+}
+.user_content>div>.left>ul>li>dl>dt.active{
+  background-color: #fafafa;
+  color: #e03e3f;
+}
+.user_content>.right{
+  width:951px;
+  border:1px solid #cccccc;
+  margin-left: 35px;
+  min-height: 695px;
+}
+
+/*入市指南*/
+.rszn>div{
+  float:left;
+}
+.rszn>div>h1.l_h1{
+  text-align: center;
+  background-color: #e03e3f;
+  height:52px;
+  line-height: 52px;
+  color: #fff;
+  width:212px;
+  font-size: 20px;
+}
+.rszn>div>.left{
+  width:210px;
+  border: 1px solid #ccc;
+}
+.rszn>div>.left>ul{
+  padding: 25px 0;
+}
+.rszn>div>.left>ul>li{
+  height:46px;
+  line-height:46px;
+  margin-bottom: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.rszn>div>.left>ul>li.active{
+  background-color: #f2f2f2;
+}
+.rszn>div>.left>ul>li>a{
+  font-size: 16px;
+  color: #666666;
+  display: block;
+}
+.rszn>div>.left>ul>li.active>a{
+  color: #e03e3f;
+}
+.rszn>.right{
+  width:951px;
+  border:1px solid #cccccc;
+  margin-left: 35px;
+  min-height: 695px;
+  padding-bottom: 50px;
+}
+/*tab 1 用户开户流程*/
+.rszn>.tab1>h1{
+  margin: 55px 0;
+  text-align: center;
+  font-size: 22px;
+  color: #333333;
+}
+.rszn>.tab1>h2{
+  text-align: center;
+  width: 273px;
+  height: 69px;
+  line-height: 69px;
+  border: 1px solid #4f81bd;
+  color: #333333;
+  background-color: #c6d9f1;
+  margin: 0 auto;
+  font-size: 14px;
+}
+.rszn>.tab1>h3{
+  text-align: center;
+  height: 51px;
+}
+/*tab 2 挂牌申请流程*/
+.rszn>.tab2>div{
+  padding: 20px 25px;
+}
+.rszn>.tab2>div>h1{
+  font-size: 14px;
+  color: #333333;
+  line-height: 22px;
+}
+.rszn>.tab2>div>h2{
+  text-align: center;
+  font-size: 18px;
+  color: #333333;
+  font-weight: bold;
+  margin: 35px 0 30px;
+}
+.rszn>.tab2>div>img{
+  display: block;
+  width: 900px;
+  margin: 0 auto;
+}
+/*tab 3 入场申请流程*/
+.rszn>.tab3>div{
+  padding: 20px 25px;
+}
+.rszn>.tab3>div>h1{
+  font-size: 14px;
+  color: #333333;
+  line-height: 22px;
+}
+.rszn>.tab3>div>h2{
+  text-align: center;
+  font-size: 18px;
+  color: #333333;
+  font-weight: bold;
+  margin: 35px 0 30px;
+}
+.rszn>.tab3>div>img{
+  display: block;
+  width: 900px;
+  margin: 0 auto;
+}
+/*店铺申请*/
+.my_ziliao>.shop_tab1{
+  width: 420px;
+  margin: 30px auto;
+}
+.my_ziliao>.shop_tab1>h1{
+  margin-bottom: 25px;
+  line-height: 32px;
+}
+.my_ziliao>.shop_tab1>h1>i{
+  display:inline-block;
+  width: 90px;
+  font-size: 14px;
+  color: #666666;
+  float: left;
+}
+.my_ziliao>.shop_tab1>h1>input{
+  width: 290px;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #666666;
+  border: 1px solid #cccccc;
+}
+.my_ziliao>.shop_tab1>h1>textarea{
+  width: 290px;
+  padding:10px;
+  resize: none;
+  border: 1px solid #cccccc;
+  height: 164px;
+}
+.my_ziliao>.shop_tab1>h1>a{
+  display: inline-block;
+  width: 275px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  background-color: #e03e3f;
+  font-size: 18px;
+  color: #ffffff;
+}
+.my_ziliao>.shop_tab2>dl{
+  width: 648px;
+  margin: 32px auto 61px;
+}
+.my_ziliao>.shop_tab2>dl>dt{
+  width: 200px;
+  margin-right: 16px;
+  float: left;
+}
+.my_ziliao>.shop_tab2>dl>dt>div{
+  border: 1px solid #cccccc;
+  font-size: 12px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  color: #666666;
+  background-color: #fafafa;
+}
+.my_ziliao>.shop_tab2>dl>dt>h5{
+  border: 1px solid #cccccc;
+  margin-top: 20px;
+  position: relative;
+}
+.my_ziliao>.shop_tab2>dl>dt>h5>img{
+  width: 198px;
+  height: 198px;
+  display: block;
+}
+.my_ziliao>.shop_tab2>dl>dt>h5>input{
+  background-color: #cccccc;
+  display: block;
+  height: 198px;
+  opacity: 0.05;
+  position: absolute;
+  top: 0;
+  width:198px;
+  z-index: 100;
+}
+.my_ziliao>.shop_tab2>p>a{
+  display: block;
+  width: 275px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background-color: #e03e3f;
+  margin: 0 auto;
+}

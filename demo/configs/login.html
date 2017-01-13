@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>登录  积交所 JJS.COM</title>
+
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/common.css">
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript" src="js/jquery-1.12.1.js"></script>
+    <style>
+        body,html{
+            overflow: hidden;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="loginback">
+        <!-- <img src="images/login.jpg" alt=""> -->
+        <!--<div class="top">
+            <div class="top_1">
+                <span class="top_1_1 fl"><a href="">积交所APP</a></span>
+                <span class="top_1_2 fr">
+                    <ul>
+                        <!-- <li><a href="login.html">登录&nbsp|</a></li> -->
+                        <!--<li><a href="user.html">用户中心&nbsp|</a></li>
+                        <li><a href="user.html">帮助中心</a></li>
+                    </ul>
+                </span>
+            </div>-->
+        </div>
+        <div class="mid">
+            <div class="mid_1">
+                <span>
+                    <img src="images/logo.png" alt="">
+                    <h5></h5>
+                </span>
+            </div>
+            <div class="mid_2">
+                <div class="mid_2_1">
+                    <h4>免注册登录</h4>
+                </div>
+                <div class="mid_2_2">
+                    <ul>
+                        <li class="login_1">
+                            <span>
+                                <img src="images/icon_3.png" alt="">
+                            </span>
+                            <input type="text" placeholder="请输入手机号" style="fr" id="phone">
+                        </li>
+                        <li class="login_2">
+                            <span>
+                                <img src="images/icon_2.png" alt="">
+                            </span>
+                            <input type="text" placeholder="请输入验证码" id="SmsCheckCode">
+                            <a href="javascript:" id="btnSendCode">发送验证码</a>
+                        </li>
+                        <li class="login_3">
+                            <span>
+                                <img src="images/icon_1.png" alt="">
+                            </span>
+                            <input type="text" placeholder="请输入邀请码">
+                        </li>
+                        <li class="login_4">
+                            <a href="javascript:" id="yanzheng">登录</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mid_2_3">
+                    <a href="">
+                        <img src="images/weixin.png" alt="">
+                    </a>
+                    <p>第三方免注册急速登录</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="opc">
+    
+        </div>
+    </div>
+    <script type="text/javascript">
+        var InterValObj; //timer变量，控制时间
+        var count = 60; //间隔函数，1秒执行
+        var curCount;//当前剩余秒数
+        // var code = ""; //验证码
+        // var codeLength = 6;//验证码长度
+        $('#btnSendCode').click(function() {
+            curCount = count;
+            var phone=$("#phone").val();//手机号码
+            if(phone != ""){
+                        //产生验证码
+                        if(phone.match(/^[1][358][0-9]{9}$/)) {
+                                // for (var i = 0; i < codeLength; i++) {
+                                //         code += parseInt(Math.random() * 9).toString();
+                                // }
+                                //设置button效果，开始计时
+                                $("#btnSendCode").attr("disabled", true);
+                                $("#btnSendCode").val(curCount + "秒后重发");
+                                InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+                                //向后台发送处理数据
+                                $.post(RestApi, { c: 'login',a: 'captcha',login_phone:phone }, function(response){
+                                        console.log(response);
+                                        var responseObj=$.parseJSON(response);
+                                        alert(responseObj.message);
+                                });
+                        }else{
+                                alert("手机号码格式不正确！");
+                        }
+                }else{
+                        alert("手机号码不能为空！");
+                }
+        });
+
+        
+        //timer处理函数
+        function SetRemainTime() {
+                if (curCount == 0) {
+                        window.clearInterval(InterValObj);//停止计时器
+                        $("#btnSendCode").removeAttr("disabled");//启用按钮
+                        $("#btnSendCode").val("重新发送验证码");
+                        code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效
+                }
+                else {
+                        curCount--;
+                        $("#btnSendCode").val(curCount + "秒后重发");
+                }
+        };
+
+
+        //验证并登录\
+        $('#yanzheng').click(function() {
+            var phone=$("#phone").val();
+            var SmsCheckCodeVal = $("#SmsCheckCode").val();
+            var yaoqing = $('#yaoqingma').val();
+            if(SmsCheckCodeVal!=""){
+                                $.post(RestApi, { c: 'login',a: 'login',login_phone:phone,login_code:SmsCheckCodeVal,uid:yaoqing}, function(response){
+                                        console.log(response);
+                                        var responseObj=$.parseJSON(response);
+                                        //$.alert(responseObj.code);
+                                        if(responseObj.code==200){
+                                            // localStorage.setItem("isLogin0","0");
+                                            // localStorage.setItem("user_id",responseObj.data.user_id);
+                                            setTimeout(function(){window.location="index.html";},1000);
+                                        }else{
+                                            alert(responseObj.message);
+                                        };
+                                });
+                        }else{
+                                alert("请正确填写手机号和验证码");
+                        }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+/*垂直居中*/
+.verticalAlign{ vertical-align:middle; display:inline-block; height:100%; margin-left:-1px;}
+
+.xcConfirm .xc_layer{position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: #666666; opacity: 0.5; z-index: 2147000000;}
+.xcConfirm .popBox{position: fixed; left: 55%; top: 50%; background-color: #ffffff; z-index: 2147000001; width: 470px; min-height: 250px; margin-left: -285px; margin-top: -150px;}
+.xcConfirm .popBox .ttBox{height: 40px; line-height: 40px;position: relative;}
+.xcConfirm .popBox .ttBox .tt{padding:0 10px;font-size: 14px; display: block; height: 40px;background-color: #e8e8e8;color: #333333;line-height: 40px;}
+.xcConfirm .popBox .ttBox .clsBtn{display: block; cursor: pointer; width: 12px; height: 12px; position: absolute; top: 22px; right: 30px; background: url(../img/tanchu.png) -48px -96px no-repeat;}
+.xcConfirm .popBox .txtBox{min-height:60px; overflow: hidden;line-height: 20px;padding: 0 15px 0 90px;margin-top: 20px;background: url('../images/tc.png') no-repeat scroll 20px 3px;}
+.xcConfirm .popBox .txtBox .bigIcon{display: inline-block;margin-right: 20px; width: 48px; height: 48px; background-image: url(../img/tanchu.png); background-repeat: no-repeat; background-position: 48px 0;}
+.xcConfirm .popBox .txtBox p{display: inline-block;overflow-x: hidden;overflow-y: auto;margin: 0;padding: 0;font-size: 14px;color: #666666;font-weight: normal;}
+.xcConfirm .popBox .txtBox p input{width: 364px; height: 30px; border: solid 1px #eef0f1; font-size: 18px; margin-top: 6px;}
+.xcConfirm .popBox .btnArea{position: absolute;width: 100%;bottom: 0;height: 70px;border-top: 1px solid #cccccc;}
+.xcConfirm .popBox .btnGroup{width:50%;height: 70px;float: left;}
+.xcConfirm .popBox .btnGroup .sgBtn{margin:14px auto;}
+.xcConfirm .popBox .sgBtn{font-size: 14px;display: block; cursor: pointer; width: 90px; height: 35px; line-height: 35px; text-align: center; color: #FFFFFF;}
+.xcConfirm .popBox .sgBtn.ok{background-color: #e03e3f; color: #FFFFFF;margin-left: 135px;}
+.xcConfirm .popBox .sgBtn.cancel{background-color: #e6e6e6; color: #666666;margin-right: 135px;}
+
+
+  .shay_confirm_pay{
+    display: none;
+  }
+  .shay_confirm_pay>.layer {
+  background-color: #666666;
+  height: 100%;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2147000000;
+}
+.shay_confirm_pay>.box{
+  background-color: #ffffff;
+  color: #535e66;
+  font-weight: bold;
+  left: 35%;
+  position: fixed;
+  top: 30%;
+  width: 580px;
+  z-index: 2147000001;
+  height: 280px;
+}
+.shay_confirm_pay>.box>h1{
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #333333;
+  font-weight: bold;
+  padding: 0 0 0 17px;
+  background-color: #e8e8e8;
+}
+.shay_confirm_pay>.box>h1>a{
+  float: right;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+.shay_confirm_pay>.box>h2{
+  width: 425px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.shay_confirm_pay>.box>h2>i{
+  font-size: 14px;
+  color: #333333;
+  display: inline-block;
+  width:75px;
+  height: 32px;
+  line-height: 32px;
+  vertical-align: middle;
+}
+.shay_confirm_pay>.box>h2>input{
+  width: 325px;
+  border: 1px solid #ccc;
+  height: 30px;
+  line-height: 30px;
+  display: inline-block;
+  padding: 0 10px;
+}
+.shay_confirm_pay>.box>h3{
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #cccccc;
+}
+.shay_confirm_pay>.box>h3>a{
+  display: inline-block;
+  width: 90px;
+  height: 36px;
+  line-height: 36px;
+  margin: 15px 10px 0;
+  font-size: 14px;
+  text-align: center;
+}
+.shay_confirm_pay>.box>h3>a.a1{
+  background-color: #e03e3f;
+  color: #ffffff;
+}
+.shay_confirm_pay>.box>h3>a.a2{
+  background-color: #e6e6e6;
+  color: #666666;
+}
+
+
