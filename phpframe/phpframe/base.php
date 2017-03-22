@@ -72,7 +72,8 @@ define("LOG4PHP_LOG", PHPFRAME_PATH . 'weblogs');
 define("CACHE_PATH", PHPFRAME_PATH . 'cache/');
 global $logsLevel;
 $logsLevel = array(
-
+    'INFO', // 正常访问日志
+    'DEBUG', // 调试信息日志
     'ERROR' // 错误日志
 );
 if ($expire == 0) {

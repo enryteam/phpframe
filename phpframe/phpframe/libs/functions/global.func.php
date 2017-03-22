@@ -923,7 +923,7 @@ function pages($num, $curr_page, $perpage = 20, $urlrule = '', $array = array(),
         }
         if ($curr_page > 0) {
             if ($curr_page == 1) {
-                $multipage .= ' <a href="javascript:;">上一页</a><a href="javascript:;">1</a>';
+                $multipage .= ' <a href="javascript:;">上一页</a>  <a href="javascript:;">1</a>';
             } elseif ($curr_page > 6 && $more) {
                 $multipage .= " <a href='" . pageurl($urlrule, $curr_page - 1, $array) . "'>上一页</a>  <a href='" . pageurl($urlrule, 1, $array) . "'>1</a>  <a href='javascript:;'>...</a></li>";
             } else {
@@ -1045,20 +1045,25 @@ function pageurl($urlrule, $page, $array = array())
         $page
     );
     if (is_array($array))
-        foreach ($array as $k => $v) {
-            $findme[] = '{$' . $k . '}';
-            $replaceme[] = $v;
+	{     
+		
+		foreach ($array as $k => $v) {
+//            $findme[] = '{$' . $k . '}';
+//            $replaceme[] = $v;
+			$varchar .="&".$k."=".$v;
         }
-    $url = str_replace($findme, $replaceme, $urlrule);
-    $url = str_replace(array(
-        'https://',
-        '//',
-        '~'
-    ), array(
-        '~',
-        '//',
-        'https://'
-    ), $url);
+	}
+//	var_dump($array);
+	$url = str_replace($findme, $replaceme, $urlrule).$varchar;
+//    $url = str_replace(array(
+//        'https://',
+//        '//',
+//        '~'
+//    ), array(
+//        '~',
+//        '//',
+//        'https://'
+//    ), $url);
     return $url;
 }
 
